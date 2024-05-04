@@ -1,0 +1,42 @@
+Cara memanggil jQuery : 
+
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        </script>
+	</head>
+</html>
+
+==========================================
+
+<html>
+	<head>
+		<script src="assets/js/jquery.min.js">
+        </script>
+	</head>
+</html>
+
+==========================================
+
+Menggunakan jQuery  : https://jquery.com
+
+========================================
+
+<!DOCTYPE html>
+<html>
+<title>Belajar jQuery</title>
+<body>
+	<!--load file jquery-->
+    <script src="jquery-3.4.0.min.js"></script>
+</body>
+</html>
+
+=========================================
+
+
+untuk mengetahui apakah jQuery sudah termuat atau belum, kita bisa melihatnya melalui console (Developer tool) lalu ketikkan simbol "$" , 
+apabila jQuery sudah termuat maka akan menampilkan pesan "ƒ (e,t){return new k.fn.init(e,t)}"
+
+
+
+=====================================
