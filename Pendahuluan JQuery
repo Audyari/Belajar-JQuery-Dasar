@@ -1,237 +1,196 @@
-Bekerja dengan DOM di JQuery :
+Memanipulasi DOM di JQuery :
 
-Mencari elemen tertentu :
+=====================================
 
-Contoh 1 : 
+var price = $('<p>From $399.99</p>');
 
-<ul id="destinations">
-	<li>Bandung</li>
-	<li>Jakarta</li>
-		<ul>
-			<li>Jakarta Pusat</li>
-			<li>Jakarta Utara</li>
-			<li>Jakarta Selatan</li>
-			<li>Jakarta Barat</li>
-			<li>Jakarta Timur</li>
-		</ul>
-	<li>Surabaya</li>
-	<li>Bali</li>
-</ul>
-<button>Aksi</button>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-$(document).ready(function()
-{
-  $("button").click(function()
-  {
-    $("#destinations li").css("background-color", "yellow");
-  });
+=======================================
+
+$(document).ready(function(){
+var price = $('<p>From $399.99</p>');    
+ $('.vacation').before(price);
 });
-</script> 
 
-=================================================================
+==========================================
 
-
-
-Mencari elemen child :  
-
-
-
-============================================
-
-$("#destinations > li");
+$(document).ready(function(){
+var price = $('<p>From $399.99</p>');    
+ $('.vacation').after(price);
+});
 
 ================================
 
-Contoh 1 : 
+$(document).ready(function(){
+var price = $('<p>From $399.99</p>');    
+ $('.vacation').append(price);
+});
 
-<ul id="destinations">
+=========================================
+
+$(document).ready(function(){
+var price = $('<p>From $399.99</p>');    
+ $('.vacation').prepend(price);
+});
+
+========================================
+
+price.insertBefore($('.vacation'));
+
+price.insertAfter($('.vacation'));
+
+price.prependTo($('.vacation'));
+
+price.appendTo($('.vacation'));
+
+
+=============Contoh CODE : ==============================
+
+
+<h1>Kemana Anda ingin pergi ?</h1>
+<ul class="lokasi">
 	<li>Bandung</li>
 	<li>Jakarta</li>
-		<ul>
-			<li>Jakarta Pusat</li>
-			<li>Jakarta Utara</li>
-			<li>Jakarta Selatan</li>
-			<li>Jakarta Barat</li>
-			<li>Jakarta Timur</li>
-		</ul>
 	<li>Surabaya</li>
-	<li>Bali</li>
+	<li>Malang</li>
+
 </ul>
-<button>Aksi</button>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(document).ready(function()
 {
-  $("button").click(function()
-  {
-    $("#destinations  > li").css("background-color", "yellow");
-  });
+    var jogja=$('<li>Yogyakarta</li>');
+    var bali=$('<li>Bali</li>');
+    var subjudul=$('<h2>Pilih Tujuan Anda</h2>');
+    var penutup=$('<h3>Terima Kasih</h3>');
+    $('.lokasi').prepend(jogja);
+    $('.lokasi').append(bali);
+    $('.lokasi').before(subjudul);
+    $('.lokasi').after(penutup);
 });
-</script> 
+</script>
+
+=================================CONTOH CODE : =================================
 
 
-============================================================================
-
-Mencari elemen lebih dari satu : 
-
-$(".promo, #france")
-
-=======CONTOH===========================
-
-<ul id="destinations">
+<h1>Kemana Anda ingin pergi ?</h1>
+<ul class="lokasi">
 	<li>Bandung</li>
 	<li>Jakarta</li>
-		<ul>
-			<li>Jakarta Pusat</li>
-			<li>Jakarta Utara</li>
-			<li>Jakarta Selatan</li>
-			<li>Jakarta Barat</li>
-			<li class="promo">Jakarta Timur</li>
-		</ul>
 	<li>Surabaya</li>
-	<li>Bali</li>
-	<li id="france">France</li>
+	<li>Malang</li>
 </ul>
-<button>Aksi</button>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(document).ready(function()
 {
-  $("button").click(function()
-  {
-$(".promo, #france").css("background-color", "yellow");
-  });
+    var jogja=$('<li>Yogyakarta</li>');
+    var bali=$('<li>Bali</li>');
+    var subjudul=$('<h2>Pilih Tujuan Anda</h2>');
+    var penutup=$('<h3>Terima Kasih</h3>');
+	jogja.prependTo($('.lokasi'));
+	bali.appendto($('.lokasi'));	
+	subjudul.insertBefore($('.lokasi'));	
+	penutup.insertAfter($('.lokasi'));
 });
-</script> 
+</script>
 
 ============================================================
 
-Memilih elemen pertama atau elemen terakhir
+CONTOH CODE 4 : 
 
-=================================================
-
-$("#destinations li:first");
-$("#destinations li:last");
-
-========CONTOH CODE : ===============================
-
-<ul id="destinations">
+<h1>Kemana Anda ingin pergi ?</h1>
+<ul class="lokasi">
 	<li>Bandung</li>
+	<li class="surabaya">Surabaya</li>
 	<li>Jakarta</li>
-		<ul>
-			<li>Jakarta Pusat</li>
-			<li>Jakarta Utara</li>
-			<li>Jakarta Selatan</li>
-			<li>Jakarta Barat</li>
-			<li class="promo">Jakarta Timur</li>
-		</ul>
-	<li>Surabaya</li>
-	<li>Bali</li>
-	<li id="france">France</li>
 </ul>
-<button>Aksi</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function()
+{
+console.log($('.surabaya').text());
+});
+</script>
+
+============================================================
+
+CONTOH 2 CODE : 
+
+<h1>Kemana Anda ingin pergi ?</h1>
+<ul class="lokasi">
+	<li>Bandung</li>
+	<li class="surabaya"><strong>Surabaya</strong></li>
+	<li>Jakarta</li>
+</ul>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(document).ready(function()
 {
-  $("button").click(function()
-  {
-   $("#destinations li:first").css("background-color", "yellow");
-   $("#destinations li:last").css("background-color", "green");
-  });
+console.log($('.surabaya').html());
 });
-</script> 
-
-
-========================================================================
-
-**Memilih elemen ganjil atau genap ** : 
+</script>
 
 =================================================
 
-$("#destinations li:odd");
-$("#destinations li:even");
+CODE 3 CONTOH :
 
-=========CONTOH CODE :=============
-
-<ul id="destinations">
+<h1>Kemana Anda ingin pergi ?</h1>
+<ul class="lokasi">
 	<li>Bandung</li>
+	<li class="surabaya"><strong>Surabaya</strong></li>
 	<li>Jakarta</li>
-		<ul>
-			<li>Jakarta Pusat</li>
-			<li>Jakarta Utara</li>
-			<li>Jakarta Selatan</li>
-			<li>Jakarta Barat</li>
-			<li class="promo">Jakarta Timur</li>
-		</ul>
-	<li>Surabaya</li>
-	<li>Bali</li>
-	<li id="france">France</li>
+	<li><input type="text" class="inputan" value="Malang"></li>
 </ul>
-<button>Aksi</button>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(document).ready(function()
 {
-  $("button").click(function()
-  {
-   $("#destinations li:odd").css("background-color", "blue");
-   $("#destinations li:even").css("background-color", "yellow");
-  });
+console.log($('.inputan').val());
 });
-</script> 
+</script>
 
 
-================================================
+====================================================
 
-Menggunakan fungsi Traversing : 
-
-.first()
-
-Memilih elemen pertama dari elemen yang dipilih
-
-.last()
-
-Memilih elemen terakhir dari elemen yang dipilih
-
-.prev()
-
-Memilih elemen sebelumnya dari elemen yang dipilih
-
-.next()
-
-Memilih elemen berikutnya dari elemen yang dipilih
-
-.children()
-
-Memilih elemen anak dari elemen yang dipilih
-
-.find()
-
-Memilih elemen anak dan juga elemen-elemen di bawahnya dari elemen yang dipilih
-
-.parent()
-
-Memilih elemen parent dari elemen yang dipilih
-
-======================================================
-
-$("li").first().next().prev().last();
+CONTOH CODE : 
 
 
-=======================================================
+<h1>Kemana Anda ingin pergi ?</h1>
+<ul class="lokasi">
+	<li class="bandung">Bandung</li>
+	<li class="surabaya"><strong>Surabaya</strong></li>
+	<li>Jakarta</li>
+	<li><input type="text" class="inputan" value="Malang"></li>
+</ul>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function()
+{
+    $('.bandung').text('Cimahi');
+    $('.surabaya').html('<em>Surabaya</em>');
+    $('.inputan').val('Semarang');
+});
+</script>
 
+===============================
 
+CONTOH CODE : 
 
+<h1>Kemana Anda ingin pergi ?</h1>
+<ul class="lokasi">
+	<li class="bandung">Bandung</li>
+	<li class="surabaya"><strong>Surabaya</strong></li>
+	<li>Jakarta</li>
+	<li><input type="text" class="inputan" value="Malang"></li>
+</ul>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function()
+{
+$('.bandung').remove();
+$('.surabaya').empty();
+});
+</script>
 
-
-
-
-
-
-
-
-
-
-
+====================================
