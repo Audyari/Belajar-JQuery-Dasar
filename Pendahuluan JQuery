@@ -1,67 +1,142 @@
-Cara memanggil jQuery : 
+Menggunakan JQuery Selector :
 
-<html>
-	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-        </script>
-	</head>
-</html>
+Contoh Sintaks : Elemen Selector
 
-==========================================
+$("p");
 
-<html>
-	<head>
-		<script src="assets/js/jquery.min.js">
-        </script>
-	</head>
-</html>
+========Contoh 1 :======================
 
-==========================================
+<h1>Where do want to go?</h1>
+<h2>Travel Destinations</h2>
+<p>Plan your next adventure</p>
+<p>Rome, Paris or Rio?</p>
+<button>Aksi</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function()
+{
+  $("button").click(function()
+  {
+    $("p").hide();
+  });
+});
+</script>
 
-Menggunakan jQuery  : https://jquery.com
-
-========================================
-
-<!DOCTYPE html>
-<html>
-<title>Belajar jQuery</title>
-<body>
-	<!--load file jquery-->
-    <script src="jquery-3.4.0.min.js"></script>
-</body>
-</html>
-
-=========================================
+=========Contoh 2 :====================
 
 
-untuk mengetahui apakah jQuery sudah termuat atau belum, kita bisa melihatnya melalui console (Developer tool) lalu ketikkan simbol "$" , 
-apabila jQuery sudah termuat maka akan menampilkan pesan "ƒ (e,t){return new k.fn.init(e,t)}"
+<h1>Where do want to go?</h1>
+<h2>Travel Destinations</h2>
+<p>Plan your next adventure</p>
+<ul id="destinations">
+	<li>Rome</li>
+	<li>Paris</li>
+	<li class='promo'>Rio</li>
+</ul>
+<button>Aksi</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function()
+{
+  $("button").click(function()
+  {
+    $("li").text("Orlando");
+  });
+});
+</script> 
 
 
+=================================
 
-==============LEBIH GAMPANG LAGI=======================
+Contoh sintaks : #id Selector
 
-1. npm install jquery
-2. buat index.html ketikkan code ini : 
+$("#sample")
 
-
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Contoh Penggunaan jQuery</title>
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
-</head>
-<body>
-  <h1>Halo, Dunia!</h1>
-
-  <script>
-    // Contoh penggunaan jQuery
-    $(document).ready(function() {
-      $('h1').text('Selamat datang menggunakan jQuery!');
-    });
-  </script>
-</body>
-</html>
+=============Contoh 1 :===========================
 
 
-=========================
+<h1 id="sample">Where do want to go?</h1>
+<h2>Travel Destinations</h2>
+<p>Plan your next adventure</p>
+<p>Rome, Paris or Rio?</p>
+<button>Aksi</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#sample").hide();
+  });
+});
+</script>  
+
+
+================Contoh 2 :=========================================
+
+<h1>Where do want to go?</h1>
+<h2>Travel Destinations</h2>
+<p>Plan your next adventure</p>
+<ul id="destinations">
+	<li>Rome</li>
+	<li>Paris</li>
+	<li class='promo'>Rio</li>
+</ul>
+<button>Aksi</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function()
+{
+  $("button").click(function()
+  {
+    $("#destinations").text("Rome, Paris or Rio?");
+  });
+});
+</script>
+
+
+=====================Contoh sintaks : .class Selector
+
+$(".sample")
+
+============Contoh 1 :================
+
+<h1>Where do want to go?</h1>
+<h2 class="sample">Travel Destinations</h2>
+<p>Plan your next adventure</p>
+<ul id="destinations">
+	<li>Rome</li>
+	<li>Paris</li>
+	<li class='promo'>Rio</li>
+</ul>
+<button>Aksi</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $(".sample").hide();
+  });
+});
+</script>
+
+======================Contoh 2 :======================
+
+<h1>Where do want to go?</h1>
+<h2>Travel Destinations</h2>
+<p>Plan your next adventure</p>
+<ul id="destinations">
+	<li>Rome</li>
+	<li>Paris</li>
+	<li class='promo'>Rio</li>
+</ul>
+<button>Aksi</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function()
+{
+  $("button").click(function()
+  {
+    $(".promo").text("Bali");
+  });
+});
+</script>
+
+=======================================
