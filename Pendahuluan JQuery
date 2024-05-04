@@ -39,4 +39,29 @@ apabila jQuery sudah termuat maka akan menampilkan pesan "ƒ (e,t){return new k.
 
 
 
-=====================================
+==============LEBIH GAMPANG LAGI=======================
+
+1. npm install jquery
+2. buat index.html ketikkan code ini : 
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contoh Penggunaan jQuery</title>
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+  <h1>Halo, Dunia!</h1>
+
+  <script>
+    // Contoh penggunaan jQuery
+    $(document).ready(function() {
+      $('h1').text('Selamat datang menggunakan jQuery!');
+    });
+  </script>
+</body>
+</html>
+
+
+=========================
