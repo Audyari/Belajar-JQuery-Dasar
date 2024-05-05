@@ -1,57 +1,144 @@
-Event Handler di JQuery
+Fitur Effect di JQuery
+
+==========CONTOH CODE 1=======================
+
+<h1>Kemana Anda ingin pergi ?</h1>
+<ul class="lokasi">
+	<li class="bandung">
+		Bandung
+		<button id="keBandung">Pergi</button>
+		<button id="hapusBandung">X</button>
+	</li>
+	<li class="jakarta">Jakarta</li>
+	<li class="surabaya">Surabaya</li>
+</ul>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function()
+{
+	$('#keBandung').on('click', function(){
+	alert('Saya mau ke Bandung');
+	});
+	$('#hapusBandung').on('click', function(){
+		$('.bandung').remove();
+		alert('Bandung dihapus');
+	});
+});
+</script>
+
+
+===============Contoh hide=====================================
+
+<h1>Kemana Anda ingin pergi ?</h1>
+<ul class="lokasi">
+	<li class="bandung">
+		Bandung
+		<button id="keBandung">Pergi</button>
+		<button id="hideBandung">H</button>
+		<button id="hapusBandung">X</button>
+
+	</li>
+	<li class="jakarta">Jakarta</li>
+	<li class="surabaya">Surabaya</li>
+</ul>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function()
+{
+	$('#keBandung').on('click', function(){
+	alert('Saya mau ke Bandung');
+	});
+	$('#hapusBandung').on('click', function(){
+		$('.bandung').remove();
+		alert('Bandung dihapus');
+	});
+	$('#hideBandung').on('click', function(){
+		$('.bandung').hide();
+	});
+});
+</script>
+
+===============Contoh fadeOut====================================
+
+$('#hideBandung').on('click', function()
+{
+	$('.bandung').fadeOut();
+});
 
 ================================
 
-Contoh
-
-Menggerakkan mouse di atas elemen
-Memilih tombol radio
-Mengklik elemen
-
-
-========Menggerakkan mouse di atas elemen:=============
-
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Contoh Event Handler jQuery</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      $("#myElement").mousemove(function() {
-        alert("Mouse bergerak di atas elemen!");
-      });
-    });
-  </script>
-</head>
-<body>
-  <div id="myElement" style="width: 200px; height: 200px; background-color: gray;"></div>
-</body>
-</html>
+$('#hideBandung').on('click', function()
+{
+	$('.bandung').fadeOut(2000);
+});
 
 
-==================Memilih tombol radio:==========================================
+================Contoh slideUp=======================================
+
+$('#hideBandung').on('click', function()
+{
+	$('.bandung').slideUp(2000);
+});
+
+================Contoh toggle==============================
 
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Contoh Event Handler jQuery</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      $("input[name='myRadio']").change(function() {
-        var selectedValue = $("input[name='myRadio']:checked").val();
-        alert("Tombol radio terpilih: " + selectedValue);
-      });
-    });
-  </script>
-</head>
-<body>
-  <input type="radio" name="myRadio" value="Nilai 1"> Nilai 1<br>
-  <input type="radio" name="myRadio" value="Nilai 2"> Nilai 2<br>
-  <input type="radio" name="myRadio" value="Nilai 3"> Nilai 3<br>
-</body>
-</html>
+<h1>Kemana Anda ingin pergi ?</h1>
+<ul class="lokasi">
+	<li class="bandung">
+		Bandung
+		<button id="keBandung">Pergi</button>
+		<button id="hideBandung">H</button>
+		<button id="hapusBandung">X</button>
+	</li>
+	<li class="jakarta">Jakarta</li>
+	<li class="surabaya">Surabaya</li>
+</ul>
+<button id="toggleButton">Toggle Bandung</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function()
+{
+	$('#keBandung').on('click', function(){
+	alert('Saya mau ke Bandung');
+	});
+	$('#hapusBandung').on('click', function(){
+		$('.bandung').remove();
+		alert('Bandung dihapus');
+	});
+	$('#hideBandung').on('click', function(){
+		$('.bandung').hide();
+	});
+	$('#toggleButton').on('click', function(){
+		$('.bandung').toggle();
+	});
+});
+</script>
 
-=========================
+
+=====================Contoh fadeToggle====================================
+
+$('#toggleButton').on('click', function(){
+	$('.bandung').fadeToggle();
+});
+
+
+
+
+==============Contoh slideToggle================================================
+
+$('#toggleButton').on('click', function(){
+	$('.bandung').slideToggle();
+});
+
+
+=================Contoh animate==========================================
+
+$('#toggleButton').on('click', function(){
+	$('.bandung').animate({
+        marginLeft:100
+	});
+});
+
+
+======================================================
