@@ -7,3 +7,51 @@ Contoh
 Menggerakkan mouse di atas elemen
 Memilih tombol radio
 Mengklik elemen
+
+
+========Menggerakkan mouse di atas elemen:=============
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contoh Event Handler jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#myElement").mousemove(function() {
+        alert("Mouse bergerak di atas elemen!");
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="myElement" style="width: 200px; height: 200px; background-color: gray;"></div>
+</body>
+</html>
+
+
+==================Memilih tombol radio:==========================================
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contoh Event Handler jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("input[name='myRadio']").change(function() {
+        var selectedValue = $("input[name='myRadio']:checked").val();
+        alert("Tombol radio terpilih: " + selectedValue);
+      });
+    });
+  </script>
+</head>
+<body>
+  <input type="radio" name="myRadio" value="Nilai 1"> Nilai 1<br>
+  <input type="radio" name="myRadio" value="Nilai 2"> Nilai 2<br>
+  <input type="radio" name="myRadio" value="Nilai 3"> Nilai 3<br>
+</body>
+</html>
+
+=========================
